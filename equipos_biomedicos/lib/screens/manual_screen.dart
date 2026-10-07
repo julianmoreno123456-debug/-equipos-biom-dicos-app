@@ -100,11 +100,18 @@ class _ManualScreenState extends State<ManualScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.picture_as_pdf, size: 60, color: Colors.grey),
+              const Icon(Icons.smart_toy_outlined, size: 56, color: Colors.grey),
               const SizedBox(height: 12),
               const Text(
-                'Este equipo aún no tiene un manual cargado.',
+                'Asistente IA del manual',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
+              const SizedBox(height: 6),
+              const Text(
+                'Sube el manual del equipo (PDF o TXT) y luego podrás\n'
+                'buscar información dentro de él con palabras clave.',
                 textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 12, color: Colors.black54),
               ),
               const SizedBox(height: 16),
               ElevatedButton.icon(
@@ -128,6 +135,8 @@ class _ManualScreenState extends State<ManualScreen> {
           padding: const EdgeInsets.all(12.0),
           child: Row(
             children: [
+              const Icon(Icons.smart_toy_outlined, color: Colors.teal, size: 20),
+              const SizedBox(width: 6),
               Expanded(
                 child: Text(
                   'Manual: ${_manual!.nombreArchivo}',
@@ -148,7 +157,7 @@ class _ManualScreenState extends State<ManualScreen> {
           child: TextField(
             controller: _busquedaCtrl,
             decoration: const InputDecoration(
-              labelText: 'Buscar en el manual (ej: voltaje, batería, error E01)',
+              labelText: 'Pregúntale al asistente (ej: voltaje, batería, error E01)',
               prefixIcon: Icon(Icons.search),
               border: OutlineInputBorder(),
             ),
